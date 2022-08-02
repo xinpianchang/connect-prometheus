@@ -30,7 +30,11 @@ export interface PrometheusOptions {
 
 declare module 'http' {
   interface IncomingMessage {
-    getMetrics?: typeof getMetrics
+    /**
+     * get prometheus metrics
+     * @params indices the cluster index,
+     */
+    getMetrics?: (indices?: number[]) => Promise<string>
   }
 }
 

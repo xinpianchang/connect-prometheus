@@ -28,7 +28,7 @@ function registerMetrics(register: Registry, ...metrics: Metric<string>[]) {
   metrics.forEach(m => register.registerMetric(m))
 }
 
-export async function getMetrics(indice: number[]) {
+export async function getMetrics(indice: number[] = []) {
   const cluster = global.cluster
   if (cluster) {
     const [single, multiple] = await Promise.all([singleRegister.metrics(), cluster.metrics(...indice)])
