@@ -1,0 +1,52 @@
+{
+  "name": "connect-prometheus",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "prometheus",
+    "connect",
+    "middleware"
+  ],
+  "homepage": "https://github.com/xinpianchang/connect-prometheus",
+  "license": "MIT",
+  "author": "tangye@xinpianchang.com",
+  "sideEffects": false,
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "npx rimraf dist",
+    "dryrun": "npm publish --access public --dry-run",
+    "prepublishOnly": "npm run build",
+    "sort": "npx sort-package-json package.json"
+  },
+  "dependencies": {
+    "@newstudios/common": "^0.2.2",
+    "broadcast-channel": "^4.14.0",
+    "debug": "^4.3.4",
+    "on-finished": "^2.4.1",
+    "prom-client": "^14.0.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@swc/core": "^1.2.222",
+    "@types/debug": "^4.1.7",
+    "@types/node": "14",
+    "@types/on-finished": "^2.3.1",
+    "rollup": "^2.77.2",
+    "rollup-plugin-swc": "^0.2.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
+}
