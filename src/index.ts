@@ -21,6 +21,7 @@ export default function Prometheus({ metrics = [] }: PrometheusOptions = {}) {
     map.process_resident_memory_bytes,
     map.process_open_fds,
     map.process_max_fds,
+    map.process_cpu_seconds_total,
     map.process_cpu_user_seconds_total,
     map.process_cpu_system_seconds_total,
     map.nodejs_version_info,
@@ -35,7 +36,6 @@ export default function Prometheus({ metrics = [] }: PrometheusOptions = {}) {
 
   // collect metrics on aggregator register
   const aggregatorMetrics = ([
-    map.process_cpu_seconds_total,
     map.nodejs_heap_space_size_used_bytes,
     map.nodejs_heap_space_size_available_bytes,
     map.nodejs_heap_space_size_total_bytes,

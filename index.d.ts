@@ -42,6 +42,10 @@ declare module 'prom-client' {
   interface Gauge<T extends string> {
     aggregator: Aggregator
   }
+
+  interface Counter<T extends string> {
+    aggregator: Aggregator
+  }
 }
 
 export interface DefaultMetricsMap {
